@@ -1,0 +1,11 @@
+Fish
+Dog
+Cat
+Goat
+Monkey
+Turkey
+Tiger
+Lion
+Cow
+Pig
+Stork
