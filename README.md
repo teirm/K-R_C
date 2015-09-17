@@ -18,3 +18,7 @@ entab.c
   #set number of tab = 5
   completed
   tried to do trick on pg 27 with respect to for loop - did not work
+
+Notes 13-Sept-15
+
+Never really finished ch 8 Exercises due to library conflicts
