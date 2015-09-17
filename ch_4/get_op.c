@@ -1,14 +1,26 @@
 #include <ctype.h>
 #include <string.h>
+<<<<<<< HEAD
 #include "calc.h"
 
 #define NUMBER '0' /* signal that a number was found */
 #define NOPREV -99 /* make sure there was no previous */
+=======
+
+#define NUMBER '0' /* signal that a number was found */
+
+int getch(void);
+void ungetch(int);
+int trans(char []);
+int mem_op(char []);
+
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 
 /* getop: get next operator or numeric operand */
 int getop(char s[])
 {
 	int i, c, b;
+<<<<<<< HEAD
 	static int prev = NOPREV;
 
 	if (prev != NOPREV && (prev != ' ' && prev != '\t')) {
@@ -19,6 +31,11 @@ int getop(char s[])
 		while ((s[0] = c = getch()) == ' ' || c == '\t')
 			; /* skip blank spaces */
 	}
+=======
+
+	while ((s[0] = c = getch()) == ' ' || c == '\t')
+		; /* skip blank spaces */
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 	s[1] = '\0';
 	if (!isdigit(c) && c != '.' && c != '-' && !isalpha(c))
 		return c; 	/* not a number */
@@ -44,7 +61,11 @@ int getop(char s[])
 		return mem_op(s);
 	
 	if (c != EOF)
+<<<<<<< HEAD
 		prev = c;	
+=======
+		ungetch(c);
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 	return NUMBER;
 }
 
@@ -68,6 +89,10 @@ int trans(char s[])
 /* mem_op: catches the memory operations */
 int mem_op(char s[])
 {
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 	if (strlen(s) == 1)
 		return 5;	
 	else if (strlen(s) == 4  && s[0] == 'S' && s[1] == 'T' && s[2] == 'O' && s[3] == 'R')

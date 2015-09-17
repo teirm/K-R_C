@@ -26,7 +26,11 @@ double pop(void)
 }
 
 /* peak: returns the value at top of stack, stack unchanged */
+<<<<<<< HEAD
 double peek(void)
+=======
+double peak(void)
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 {
 	if (sp > 0)
 		return val[sp - 1];
@@ -40,7 +44,11 @@ double peek(void)
 void duplicate(void)
 {
 	if (sp > 0)
+<<<<<<< HEAD
 		push(peek());
+=======
+		push(peak());
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 	else {
 		printf("error: stack empty\n");
 	}

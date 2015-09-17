@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> 	/* for atof() */
+<<<<<<< HEAD
 #include <math.h>
 #include "stack_op.c"
 #include "get_op.c"
@@ -18,6 +19,19 @@
 #define VARIABLE	5		/* signal for a VARIABLE */
 #define STORE_OP	6		/* signal to STORE current val in VARIABLE */
 #define LOAD_OP		7		/* signal to LOAD val from VARIALBLE */
+=======
+#include "stack_op.c"
+#include "get_op.c"
+#include "calc_mem.c"
+
+
+#define MAXOP 100 		/* max size of operand oor operator */
+#define NUMBER '0'		/* signal that a number was found */
+
+int getop(char []);
+void push(double);
+double pop(void);
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 
 /* reverse Polish calculator */
 int main()
@@ -26,13 +40,17 @@ int main()
 	double op2;
 	char s[MAXOP];
 
+<<<<<<< HEAD
 	init_mem();
 
+=======
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 	while ((type = getop(s)) != EOF) {
 			switch (type) {
 			case NUMBER: 
 				push(atof(s));
 				break;
+<<<<<<< HEAD
 			case SINE_OP:
 				push(sin(pop()));
 				break;
@@ -58,6 +76,8 @@ int main()
 			case LOAD_OP:
 				push(load((int)pop()));
 				break;
+=======
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 			case '+':
 				push(pop() + pop());
 				break;
@@ -73,8 +93,12 @@ int main()
 					printf("error: zero divisor\n");
 				break;
 			case '\n':
+<<<<<<< HEAD
 				printf("\t%.8g\n",peek());
 				print_store(pop());
+=======
+				printf("\t%.8g\n",pop());
+>>>>>>> 16622dc5f8b557529594827122d43c61edeaea87
 				break;
 			default:
 				printf("error: unknown command %s\n", s);
